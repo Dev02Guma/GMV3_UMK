@@ -86,8 +86,6 @@ public class FragmentClientes extends Fragment implements AdapterClientes.Contac
             }
         });
 
-
-
         fetchContacts();
         onRefresh();
 

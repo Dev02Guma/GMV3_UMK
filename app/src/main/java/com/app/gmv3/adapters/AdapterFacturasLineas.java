@@ -2,6 +2,8 @@ package com.app.gmv3.adapters;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,10 +61,22 @@ public class AdapterFacturasLineas extends RecyclerView.Adapter<AdapterFacturasL
 
 
 
+
+
         String price = String.format(Locale.ENGLISH, "%1$,.2f", Double.parseDouble(product.getVENTA()));
-        holder.txt_sku.setText(product.getARTICULO());
+        String Artic = product.getARTICULO();
+
+        price = (price.equals("0.00")) ? "( Bono) " : ("C$ ").concat(price);
+
+        price = (Artic.contains("VU")) ? " " : price;
+
+
+
+
+
+        holder.txt_sku.setText(Artic);
         holder.product_name.setText(product.getDESCRIPCION());
-        holder.product_venta.setText(("C$ ").concat(price));
+        holder.product_venta.setText(price);
         holder.product_cant.setText(("Cant. ").concat(product.getCANTIDAD()));
 
         Transformation transformation = new RoundedTransformationBuilder()

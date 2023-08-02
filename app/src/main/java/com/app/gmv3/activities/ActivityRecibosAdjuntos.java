@@ -294,6 +294,7 @@ public class ActivityRecibosAdjuntos extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError e) {
                 progressDialog.dismiss();
+                Log.e("TAG_error", "onErrorResponse: " + e.getMessage());
                 Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
             }
         }){

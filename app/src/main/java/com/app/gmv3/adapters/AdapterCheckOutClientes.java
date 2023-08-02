@@ -3,6 +3,8 @@ package com.app.gmv3.adapters;
 import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +39,8 @@ public class AdapterCheckOutClientes extends RecyclerView.Adapter<AdapterCheckOu
             cliente_disponible = view.findViewById(R.id.id_cliente_disponible);
             cliente_saldo = view.findViewById(R.id.id_cliente_saldo);
             cliente_limite = view.findViewById(R.id.id_cliente_limite);
-            cliente_moroso = view.findViewById(R.id.client_moroso);
+            cliente_moroso = view.findViewById(R.id.id_lyt_moroso);
+
             ly = view.findViewById(R.id.id_moroso_img);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,6 +78,8 @@ public class AdapterCheckOutClientes extends RecyclerView.Adapter<AdapterCheckOu
             holder.ly.setImageDrawable(context.getResources().getDrawable(R.drawable.img_person));
         }
         holder.cliente_direccion.setText(clients.getDIRECCION());
+
+        holder.cliente_moroso.setVisibility((clients.getCONDPA().contains("Contado") ? View.VISIBLE : View.GONE));
 
         if (Config.ENABLE_DECIMAL_ROUNDING) {
             String p1 = String.format(Locale.ENGLISH, "%1$,.0f", clients.getDIPONIBLE());
