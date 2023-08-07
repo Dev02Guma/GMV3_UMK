@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
@@ -61,7 +62,7 @@ import static com.app.gmv3.utilities.Constant.PUSH_PIN;
 public class ActivityPerfilCliente extends AppCompatActivity{
     TextView txt_perfil_name_cliente,txt_perfil_disponible,txt_perfil_saldo,txt_perfil_limite;
     TextView txt_perfil_noVencido,txt_perfil_d30,txt_perfil_d60,txt_perfil_d90,txt_perfil_d120,txt_perfil_m120;
-    TextView txt_tele,txt_condicion_pago,txt_saldo_vineta;
+    TextView txt_tele,txt_condicion_pago,txt_saldo_vineta,txt_nivel_precio;
     String code_cliente,str_moroso;
 
     /*public static ArrayList<String> factura_id = new ArrayList<String>();
@@ -75,6 +76,7 @@ public class ActivityPerfilCliente extends AppCompatActivity{
     //List<Facturas_mora> arrayItemLotes;
     CircleImageView ImgVerication;
     String strVerificado,strPin,strDireccion, StrPlan;
+    ImageButton bLocation;
 
     CardView cardView ;
 
@@ -118,9 +120,12 @@ public class ActivityPerfilCliente extends AppCompatActivity{
         txt_perfil_m120         = findViewById(R.id.id_perfil_m120);
         txt_saldo_vineta         = findViewById(R.id.id_saldo_vineta);
 
+        txt_nivel_precio= findViewById(R.id.id_nivel_precio);
+
 
 
         ImgVerication           = findViewById(R.id.id_btn_verificacion);
+        bLocation               = findViewById(R.id.id_btw_location);
 
         cardView                = findViewById(R.id.id_card_vinneta);
 
@@ -188,15 +193,16 @@ public class ActivityPerfilCliente extends AppCompatActivity{
         txt_perfil_name_cliente.setText(Nombre_Cliente);
         txt_tele.setText(intent.getStringExtra("Telefono"));
         txt_condicion_pago.setText(intent.getStringExtra("Condicion_pago"));
+        txt_nivel_precio.setText(("Nv. Precio: ").concat(intent.getStringExtra("NIVEL_PRECIO")));
         txt_perfil_disponible.setText(("C$ ").concat(intent.getStringExtra("Disponible")));
         txt_perfil_saldo.setText(("C$ ").concat(intent.getStringExtra("Saldo")));
         txt_perfil_limite.setText(("C$ ").concat(intent.getStringExtra("Limite")));
 
         txt_saldo_vineta.setText(("C$ ").concat(intent.getStringExtra("vineta_saldo")));
 
-        ImgVerication.setImageDrawable(getApplicationContext().getResources().getDrawable(((strVerificado.contains("S;")) ? R.drawable.verificado :R.drawable.noverificado)));
+        //ImgVerication.setImageDrawable(getApplicationContext().getResources().getDrawable(((strVerificado.contains("S;")) ? R.drawable.verificado :R.drawable.noverificado)));
 
-        ImgVerication.setOnClickListener(new View.OnClickListener() {
+        bLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityPerfilCliente.this, ActivityVerificacion.class);

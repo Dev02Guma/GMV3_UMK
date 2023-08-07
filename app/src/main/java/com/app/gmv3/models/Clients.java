@@ -15,6 +15,11 @@ public class Clients {
     String PIN;
     String vineta;
     String PLAN;
+    String NIVEL_PRECIO;
+
+    public String getNIVEL_PRECIO() {
+        return NIVEL_PRECIO;
+    }
 
     public String getPLAN() {
         return PLAN;

@@ -23,7 +23,7 @@ public class Activitysplash extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splash_v2);
         MyApp = MyApplication.getInstance();
         if (Config.ENABLE_RTL_MODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -36,7 +36,7 @@ public class Activitysplash extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
 
-        ((TextView) findViewById(R.id.app_version)).setText(BuildConfig.VERSION_NAME);
+        ((TextView) findViewById(R.id.app_version)).setText(("v")+BuildConfig.VERSION_NAME);
 
         if (getIntent().hasExtra("nid")) {
             id = getIntent().getLongExtra("nid", 0);

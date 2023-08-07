@@ -111,6 +111,38 @@
                     </LinearLayout>
 
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Nv. Precio: "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                            android:textStyle="bold" />
+                        <View
+                            android:layout_width="@dimen/spacing_medium"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:id="@+id/id_cliente_codigo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Farmacia"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                            android:textColor="@color/light_blue_400"
+                            android:textStyle="bold" />
+
+
+
+
+                    </LinearLayout>
+
+
 
 
 

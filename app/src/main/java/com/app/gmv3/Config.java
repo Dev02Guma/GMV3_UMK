@@ -5,7 +5,7 @@ public class Config {
     //public static final String ADMIN_PANEL_URL = "http://186.1.15.164:8448/gmv3";
     //public static final String API_COMMISIOENS = "http://186.1.15.164:8448/SAC";
 
-    public static final String SERVER = "devs"; //devs or apps
+    public static final String SERVER = "apps"; //devs or apps
     public static final String ADMIN_PANEL_URL = "https://" + SERVER + ".gumacorp.com/gmv3";
     public static final String API_COMMISIOENS = "https://" + SERVER + ".gumacorp.com/SAC";
 

@@ -30,7 +30,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.MyView
     private ContactsAdapterListener listener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView category_name, product_count,txt_cliente_limite,txt_cliente_saldo,txt_cliente_disponible;
+        public TextView category_name, product_count,txt_cliente_codigo,txt_cliente_limite,txt_cliente_saldo,txt_cliente_disponible;
         public CardView cardView;
         public TextView relativeLayout;
         public CircleImageView ImgVerication;
@@ -46,6 +46,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.MyView
             lytPin                  = view.findViewById(R.id.id_lyt_pin);
             category_name           = view.findViewById(R.id.category_name);
             product_count           = view.findViewById(R.id.product_count);
+            txt_cliente_codigo      = view.findViewById(R.id.id_cliente_codigo);
             txt_cliente_limite      = view.findViewById(R.id.id_cliente_limite);
             txt_cliente_saldo       = view.findViewById(R.id.id_cliente_saldo);
             txt_cliente_disponible  = view.findViewById(R.id.id_cliente_disponible);
@@ -85,6 +86,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.MyView
         holder.relativeLayout.setVisibility((clients.getMOROSO().equals("S") ? View.VISIBLE : View.GONE));
         holder.lytPin.setVisibility((clients.getPIN().equals("S") ? View.VISIBLE : View.GONE));
         holder.product_count.setText(clients.getDIRECCION());
+        holder.txt_cliente_codigo.setText(clients.getNIVEL_PRECIO());
         holder.ImgVerication.setVisibility((clients.getVERIFICADO().contains("S;") ? View.VISIBLE : View.GONE));
         holder.txt_cliente_limite.setText(("C$ ").concat(clients.getLIMITE()));
         holder.txt_cliente_saldo.setText(("C$ ").concat(clients.getSALDO()));
