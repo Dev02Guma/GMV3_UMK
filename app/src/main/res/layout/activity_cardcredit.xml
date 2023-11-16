@@ -5,11 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.CardcreditActivity">
-    <com.craftman.cardform.CardForm
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/card_form"/>`
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

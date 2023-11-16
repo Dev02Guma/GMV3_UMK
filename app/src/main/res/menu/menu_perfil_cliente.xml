@@ -4,8 +4,8 @@
 
 
     <item
-        android:id="@+id/item_rpt_visita"
         android:visible="false"
+        android:id="@+id/item_rpt_visita"
         android:icon="@drawable/ic_event"
         android:title="@string/action_reporte_visita"
         app:showAsAction="always" />

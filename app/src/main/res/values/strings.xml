@@ -92,6 +92,7 @@
     <string name="checkout_address">Dirección</string>
     <string name="checkout_shipping">Orden</string>
     <string name="title_history">Historial de pedidos</string>
+    <string name="title_plan_trabajo">Plan de Trabajo </string>
     <string name="title_profile">Perfil de usuario</string>
     <string name="btn_process_checkout">PROCESAR PEDIDO</string>
 

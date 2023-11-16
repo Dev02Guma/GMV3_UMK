@@ -19,6 +19,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.PlanTrabajoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ComisionActivity"
             android:exported="false" />
         <activity
@@ -39,8 +42,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
+            android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -93,7 +93,11 @@ public class ActivityItems8020 extends AppCompatActivity implements AdapterItems
         nMonth  = intent.getIntExtra("nMonth",0);
         nYear   = intent.getIntExtra("nYear",0);
 
-        getSupportActionBar().setTitle("ARTIULOS 80/20");
+
+
+        String strTitulo = ("ARTICULOS 80/20 - ").concat(Utils.getShortNameMonth(nMonth)).concat(String.valueOf(nYear)) ;
+
+        getSupportActionBar().setTitle(strTitulo);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = this.getWindow();

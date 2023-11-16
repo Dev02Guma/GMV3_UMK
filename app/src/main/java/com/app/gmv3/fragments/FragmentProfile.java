@@ -27,6 +27,7 @@ import com.app.gmv3.activities.ActivityReportes;
 import com.app.gmv3.activities.ActivitySettings;
 import com.app.gmv3.activities.ComisionActivity;
 import com.app.gmv3.activities.MyApplication;
+import com.app.gmv3.activities.PlanTrabajoActivity;
 import com.app.gmv3.utilities.SharedPref;
 
 public class FragmentProfile extends Fragment {
@@ -147,12 +148,20 @@ public class FragmentProfile extends Fragment {
             }
         });
 
+        view.findViewById(R.id.id_plan_trabajo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PlanTrabajoActivity.class);
+                intent.putExtra("id_Ruta", sharedPref.getYourName());
+                startActivity(intent);
+            }
+        });
+
         view.findViewById(R.id.btn_recibos_history).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ActivityHistoryRecibos.class);
                 intent.putExtra("id_Ruta", sharedPref.getYourName());
-                intent.putExtra("Nombre_ruta", sharedPref.getYourAddress());
                 startActivity(intent);
             }
         });

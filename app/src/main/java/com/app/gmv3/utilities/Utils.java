@@ -118,6 +118,17 @@ public class Utils {
         }
     }
 
+    public static String  getShortNameMonth(int nMonth){
+        if (nMonth < 1 || nMonth > 12) {
+            throw new IllegalArgumentException("N/D");
+        }
+
+     // Nombres cortos de los meses en español
+        String[] shortMonths = {"Ene. ", "Feb. ", "Mar. ", "Abr. ", "May. ", "Jun. ", "Jul. ", "Ago. ", "Sep. ", "Oct. ", "Nov. ", "Dic. "};
+
+        return shortMonths[nMonth - 1];
+    }
+
     public static void setSystemBarColor(Activity act) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = act.getWindow();
